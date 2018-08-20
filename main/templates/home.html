@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mt-5 text-center">
+    <h1 class="display-1">mnist</h1>
+    <p class = "lead">画像をアップロードして、送信してください</p>
+    <form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="files[]" multiple>
+        <input type="submit" class="btn btn-lg btn-secondary" value="upload">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+    {% extends "base.html" %}
+    {% block content %}
+    <div class="mt-5 text-center">
+      {% for data in result %}
+        <img class="img-fluid" src="data:image/png;base64,{{data.0}}">
+        {{data.0}}
+        <p class="lead">この画像は{{ data.1 }}です。</p>
+        <hr>
+      {% endfor %}
+      <a class="btn btn-lg btn-secondary"  href="{% url 'home' %}">戻る</a>
+    </div>
+    {% endblock %}
