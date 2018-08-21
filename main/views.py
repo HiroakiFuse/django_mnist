@@ -28,6 +28,7 @@ def upload(request):
         for file, label in zip(files, labels):
             file.seek(0)
             src = base64.b64encode(file.read())
+            src = src.decode()
             result.append((src, label))
         context = {
             'result': result,
